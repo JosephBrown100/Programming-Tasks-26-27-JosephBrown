@@ -11,13 +11,29 @@ TODO:
 - Fill in functions
 - Add demonstration code under `if __name__ == "__main__":`
 """
+import random
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+    nothing = 0
+
+
+def rand_list(values):
+     Num_vals = random.randint(1,20)
+     for i in range(0,Num_vals):
+        Num = random.randint(1,100)
+        values.append(Num)
+     return values
+
+
+def Reverse_list(values):
+     Rev_Values = []
+     for i in range(len(values) -1, -1, -1):
+        Rev_Values.append(values[i])
+     return Rev_Values
+
 
 
 if __name__ == "__main__":
-    main()
+    values = []
+    print(rand_list(values))
+    print(Reverse_list(values))

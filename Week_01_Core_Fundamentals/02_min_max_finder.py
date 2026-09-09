@@ -13,11 +13,37 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+    nothing = 0
+    #nothing
+
+def get_vals(values):
+     loop = True
+     while loop:
+        num = input()
+        if not num.isnumeric():
+            print("Make sure to only enter integers")
+            continue
+        else:
+            num = int(num)
+            loop = False
+        for i in range(num):
+            val = float(input("Enter a number: "))
+            values.append(val)
+
+def find_min_max(values):
+     min = values[0]
+     max = values[0]
+     for i in values:
+        if i < min:
+            min = i
+     for i in values:
+        if i > max:
+            max = i
+     return min, max
 
 
 if __name__ == "__main__":
-    main()
+    values = []
+    get_vals(values)
+    print(find_min_max(values))
+
