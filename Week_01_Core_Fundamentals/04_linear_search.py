@@ -12,13 +12,33 @@ TODO:
 - Fill in functions
 - Add demonstration code under `if __name__ == "__main__":`
 """
+import random
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+    nothing = 0
+
+def list_generator(values):
+    Num_vals = random.randint(10,40)
+    for i in range(0,Num_vals):
+        Num = random.randint(1,50)
+        values.append(Num)
+    return values
+
+def linear_search(values,target):
+    found = True
+    for i in values:
+        if i == target:
+            print(values.index(i))
+            break
+    else:
+        if target not in values:
+            print(-1)
+
 
 
 if __name__ == "__main__":
     main()
+    target = int(input("what is the target value"))
+    values = []
+    list_generator(values)
+    linear_search(values,target)
