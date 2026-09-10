@@ -13,11 +13,26 @@ TODO:
 """
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
-    pass
+    n = 0
+
+def parser(string):
+    split = []
+    temp = []
+    for char in string:
+        if char == " ":
+            if temp:
+                split.append("".join(temp))
+                temp = []
+                continue
+        else:
+            temp.append(char)
+    if temp:
+        split.append("".join(temp))
+    print(split)
+
 
 
 if __name__ == "__main__":
     main()
+    string = input()
+    parser(string)
