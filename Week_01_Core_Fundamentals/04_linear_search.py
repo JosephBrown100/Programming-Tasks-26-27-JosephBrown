@@ -26,13 +26,14 @@ def list_generator(values):
 
 def linear_search(values,target):
     found = True
+    if target not in values:
+        print(-1)
+        return
     for i in values:
         if i == target:
             print(values.index(i))
             break
-    else:
-        if target not in values:
-            print(-1)
+
 
 
 
