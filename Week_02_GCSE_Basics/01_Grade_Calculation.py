@@ -21,5 +21,32 @@ def main():
     pass
 
 
+def numcheck(score):
+    wrong = True
+    while wrong:
+        if score < 0 or score > 100:
+            print("invalid score, re-enter")
+            score = float(input("enter valid score"))
+        wrong = False
+
+
+def get_grade(score):
+    numcheck(score)
+    if 80.00 <= score and score <= 100.00:
+        grade = "A"
+        print(grade)
+    elif 60 <= score and score < 80:
+        grade = "B"
+        print(grade)
+    elif 40 <= score and score < 60:
+        grade = "C"
+        print(grade)
+    else:
+        grade = "D"
+        print(grade)
+
 if __name__ == "__main__":
     main()
+    for i in range(0,10):
+        score = float(input("please enter the students score: "))
+        get_grade(score)
