@@ -16,6 +16,19 @@ def main():
     # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
     pass
 
+def line_count(term,name):
+    count = 0
+    with open("Programming-Tasks-26-27-JosephBrown\\Week_03_Arrays_Lists_CSV_Basics\\"+name, "r") as file:
+        for line in file:
+            if term in line:
+                count += 1
+    return count
+
+
 
 if __name__ == "__main__":
     main()
+    term = input("What word are you looking for: ")
+    name = input("what is the file name: ")
+    times = line_count(term,name)
+    print(times)

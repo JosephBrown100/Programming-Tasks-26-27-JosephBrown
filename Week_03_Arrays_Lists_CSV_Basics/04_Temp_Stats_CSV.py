@@ -22,6 +22,26 @@ def main():
     # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
     pass
 
+def minmax():
+    max = 0
+    min = 10000
+    total = 0
+    n = 0
+    with open("Programming-Tasks-26-27-JosephBrown\\Week_03_Arrays_Lists_CSV_Basics\\meantemp_daily_totals.txt","r") as file:
+        for i in file:
+            vals = i.split(" ")
+            temp = vals[-1]
+            temp = float(temp)
+            if temp > max:
+                max = temp
+            if temp < min:
+                min = temp
+            total += temp 
+            n += 1
+        return max, min, (total/n)
+
 
 if __name__ == "__main__":
     main()
+    x, y, z = minmax()
+    print("maximum is:", x, "minimum is:", y, "average is:", z)

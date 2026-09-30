@@ -14,13 +14,55 @@ TODO:
 - Fill in functions
 - Add demonstration code under `if __name__ == "__main__":`
 """
+import random
+
 
 def main():
-    # TODO: Write demonstration/testing code
-    # If you want to delete all the code here and work just with a blank file go ahead, remember anything under the if __name__=="__main__":
-    # will only run if this module is being run directly. So used this subprocedure to carry out testing if it is going to be an imported file.
     pass
+
+def dice(times, rolls):
+    average = 0
+    for i in range(times):
+        roll = random.randint(1,6)
+        print(roll)
+        rolls[roll - 1] += 1
+        average += roll
+    return rolls, (average/times)
+
+
+
+
+
 
 
 if __name__ == "__main__":
     main()
+    rolls = [0, 0, 0, 0, 0, 0]
+    times = input("how many times do you want to roll the die: ")
+    casting = True
+    while casting:
+        try:
+            times = int(times)
+            casting = False
+        except:
+            times = input("invalid input, re-enter: ")
+    rolls, average = dice(times,rolls)
+    deciding = True
+    while deciding:
+        choice = input("Totals, average, counts or return to exit: ")
+        try:
+            if choice == "Totals":
+                print(rolls)
+            elif choice == "average":
+                print(average)
+            elif choice == "counts":
+                n = 1
+                for face, count in enumerate(rolls, 0):
+                    face += 1
+                    count = count * n
+                    print(face,":",count)
+                    n += 1
+            elif len(choice) < 1:
+                deciding = False
+        except:
+            print("invalid")
