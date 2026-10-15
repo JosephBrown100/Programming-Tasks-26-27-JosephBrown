@@ -23,9 +23,9 @@ def main():
 
 def random_array():
     data = []
-    ranges = random.randint(2,20)
+    ranges = random.randint(2,200)
     for i in range(ranges):
-        value = random.randint(1,20)
+        value = random.randint(1,200)
         data.append(value)
     return data
 

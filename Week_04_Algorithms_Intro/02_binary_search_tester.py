@@ -72,7 +72,7 @@ def recursive_binary_search(data,target,low,high):
     med = low + (high-low)//2
     if data[med] == target:
         return med
-    if low == high:
+    if low > high:
         print("value not in list")
         return
     elif data[med] > target:
