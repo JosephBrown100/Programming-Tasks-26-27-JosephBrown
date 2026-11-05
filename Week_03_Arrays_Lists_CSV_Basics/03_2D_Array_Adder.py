@@ -46,7 +46,7 @@ def add_to_array(data):
     newdata = input("what do you want to replace it with: ")
     data[row-1][column-1] = newdata
     for i in data:
-            print(i)
+        print(i)
     return data
 
 def Turn_val_null(data):
